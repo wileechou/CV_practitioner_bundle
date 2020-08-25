@@ -57,12 +57,12 @@ class HDF5DatasetGenerator:
                     # images
                     images = np.array(procImages)
 
-                # if the data augmenator exists, apply it
+                # if the data augmentator exists, apply it
                 if self.aug is not None:
                     (images, labels) = next(self.aug.flow(images,
                                                           labels, batch_size=self.batchSize))
 
-                # yeild a tuple of images and labels
+                # yield a tuple of images and labels
                 yield (images, labels)
 
             # increment the total number of epochs
