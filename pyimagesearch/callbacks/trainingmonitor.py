@@ -43,7 +43,7 @@ class TrainingMonitor(BaseLogger):
         # to file
         if self.jsonPath is not None:
             f = open(self.jsonPath, "w")
-            f.write(json.dumps(self.H))
+            f.write(json.dumps(str(self.H)))
             f.close()
         # ensure at least two epochs have passed before plotting
         # (epoch starts at zero)
