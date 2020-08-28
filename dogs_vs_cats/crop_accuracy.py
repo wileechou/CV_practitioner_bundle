@@ -13,7 +13,7 @@ from pyimagesearch.preprocessing.croppreprocessor import CropPreprocessor
 from pyimagesearch.utils.ranked import rank5_accuracy
 from pyimagesearch.io.hdf5datasetgenerator import HDF5DatasetGenerator
 from tensorflow.keras.models import load_model
-import config.dogs_vs_cats_config as config
+import config as config
 import numpy as np
 import progressbar
 import json
