@@ -42,7 +42,7 @@ In order to help user deploy this project, here's my information.
   tensorflow:2.1.0
   
   现在keras直接在tensorflow中就可以用，所以我直接使用anaconda安装tensorflow的gpu版本。重要在于一定要安装2.1版本（如果跑训练时出现failed to get convolution algorithm等错误），因为
-  我机子的显存不大，很容易就溢出，需要插入一些代码就行调整策略，这些代码在最新的几个tensorflow版本是不会成功的。
+  我机子的显存不大，很容易就溢出，需要插入一些代码调整显存使用策略，这些代码在最新的几个tensorflow版本是不会成功的。
  
 # 开始
   根据我提供的配置信息，部署你的环境。其它需要安装的python包就可以直接看.py文件中的import就行了，因为要安装的不多，所以我就不列举了（主要是懒）
