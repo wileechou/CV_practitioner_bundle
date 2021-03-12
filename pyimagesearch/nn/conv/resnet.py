@@ -80,6 +80,16 @@ class ResNet:
             # apply a single CONV layer
             x = Conv2D(filters[0], (3, 3), use_bias=False,
                        padding="same", kernel_regularizer=l2(reg))(x)
+        # check to see if we are using the TIny ImageNet dataset
+        elif dataset == "tiny_imagenet":
+            # apply CONV => BN => ACT => POOL to reduce spatial size
+            x = Conv2D(filters[0], (5, 5), use_bias=False,
+                       padding="same", kernel_regularizer=l2(reg))(x)
+            x = BatchNormalization(axis=chanDim, epsilon=bnEps,
+                                   momentum=bnMom)(x)
+            x = Activation("relu")(x)
+            x = ZeroPadding2D((1, 1))(x)
+            x = MaxPooling2D((3, 3), strides=(2, 2))(x)
 
         # loop over the number of stages
         for i in range(0, len(stages)):
